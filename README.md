@@ -1,4 +1,4 @@
-# DocChat: Your PDF Companion
+# DocChat: Chat With PDF
 
 DocChat is a Streamlit-based chatbot application that allows you to interact with PDF documents in a conversational manner. It leverages a locally stored sentence-transformer model for semantic search and a local GPT model for generating contextual responses.
 
@@ -8,6 +8,12 @@ DocChat is a Streamlit-based chatbot application that allows you to interact wit
 - **Semantic Search:** Search the document content using state-of-the-art embeddings.
 - **Conversational Responses:** Ask questions and get meaningful responses from the PDF's content.
 - **Completely Offline:** No API usage; models are stored and run locally.
+
+---
+
+## DocChat Preview
+
+![DocChat Preview](image.png)
 
 ---
 
@@ -34,7 +40,7 @@ This script downloads and stores:
 - The **SentenceTransformer** model for semantic search.
 - The **GPT-Neo** model for conversational response generation.
 
-### 3. Start the Application
+### 4. Start the Application
 
 Once the models are downloaded, run the Streamlit app to start DocChat:
 
@@ -92,5 +98,3 @@ streamlit run app.py
 - Ensure sufficient disk space for storing models (~1GB).
 - For better performance, larger GPT models like GPT-2 or GPT-J can be used.
 - If you encounter errors, ensure all dependencies are correctly installed and the models are downloaded without interruptions.
-
----

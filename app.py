@@ -81,17 +81,14 @@ def main():
 
     st.title("📄 DocChat: Chat with Your PDF")
 
-    # Initialize session state for chat history
     if "chat_history" not in st.session_state:
         st.session_state["chat_history"] = []
 
-    # Sidebar for uploading PDFs
     with st.sidebar:
         st.header("📤 Upload Your PDF")
         pdf = st.file_uploader("Choose a PDF file", type="pdf")
     
     if pdf is not None:
-        # Parse PDF and extract text
         pdf_reader = PdfReader(pdf)
         text = "".join(page.extract_text() for page in pdf_reader.pages)
         
@@ -129,7 +126,6 @@ def main():
                         unsafe_allow_html=True,
                     )
                 else:
-                    # Add typewriter effect for doc messages
                     st.markdown(
                         f"""
                         <div class="message-box doc-message">
@@ -154,7 +150,6 @@ def main():
                         unsafe_allow_html=True,
                     )
 
-        # Fixed bottom text area for input
         user_input_area = st.empty()
         with user_input_area.container():
             user_query = st.text_input(
