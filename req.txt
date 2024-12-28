@@ -1,0 +1,6 @@
+langchain==0.0.1
+pypdf==5.1.0
+python-dotenv==1.0.0
+streamlit==1.0.0
+faiss-cpu==1.7.0
+streamlit-extras==0.1.0
