@@ -94,13 +94,3 @@ streamlit run app.py
 - If you encounter errors, ensure all dependencies are correctly installed and the models are downloaded without interruptions.
 
 ---
-
-## Contributions
-
-Contributions to improve the project are welcome! Feel free to submit a pull request or open an issue.
-
----
-
-## License
-
-This project is licensed under the MIT License.

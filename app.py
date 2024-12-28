@@ -129,11 +129,27 @@ def main():
                         unsafe_allow_html=True,
                     )
                 else:
+                    # Add typewriter effect for doc messages
                     st.markdown(
                         f"""
                         <div class="message-box doc-message">
-                            <b>Doc:</b> {chat['text']}
+                            <b>Doc:</b> <span id="doc-text-{len(st.session_state['chat_history'])}" class="typewriter">{chat['text']}</span>
                         </div>
+                        <script>
+                            var docText = document.getElementById('doc-text-{len(st.session_state['chat_history'])}');
+                            var text = docText.innerText;
+                            docText.innerText = '';
+                            var i = 0;
+                            var speed = 50;
+                            function typeWriter() {{
+                                if (i < text.length) {{
+                                    docText.innerHTML += text.charAt(i);
+                                    i++;
+                                    setTimeout(typeWriter, speed);
+                                }}
+                            }}
+                            typeWriter();
+                        </script>
                         """,
                         unsafe_allow_html=True,
                     )
@@ -167,7 +183,7 @@ def main():
             response = generate_answer(context, user_query)
             st.session_state["chat_history"].append({"type": "doc", "text": response})
 
-            st.experimental_rerun()
+            st.rerun()
 
 if __name__ == "__main__":
     main()
